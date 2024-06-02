@@ -73,7 +73,8 @@ def sample(model, path, vocabulary, proVoc, smiMaxLen, proMaxLen, device, sample
     proMask = [1] * lp + [0] * (proMaxLen - lp)
     proMask = torch.as_tensor([proMask]).to(device)
 
-    tgt_mask = nn.Transformer.generate_square_subsequent_mask(model, smiMaxLen).tolist()
+    # tgt_mask = nn.Transformer.generate_square_subsequent_mask(model, smiMaxLen).tolist()
+    tgt_mask = nn.Transformer.generate_square_subsequent_mask(smiMaxLen).tolist()
     tgt_mask = [tgt_mask] * 1
     tgt_mask = torch.as_tensor(tgt_mask).to(device)
 
@@ -168,7 +169,7 @@ def BeamSearch(experimentId, modelName, root, k, beamSize=10):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-k', type=int, default=0)
-    parser.add_argument('--device', type=str, default='3')
+    parser.add_argument('--device', type=str, default='0')
     parser.add_argument('-bs', type=int, default=10)
     parser.add_argument('--source', type=str, default='new')
     parser.add_argument('-p', type=str, default='LT', help='pretrained model')
