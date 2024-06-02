@@ -47,6 +47,11 @@ Specific De Novo Molecular Generation**
 | openbabel | 3.1.1 | py37h200e996_1 | conda-forge |
 | biopython | 1.79 | pypi_0 | pypi |
 
+
+### Install Smina
+- Step 1: install Openbabel3 `https://github.com/openbabel/openbabel/blob/master/INSTALL`
+- Step 2: install smina `https://sourceforge.net/p/smina/code/ci/master/tree/`
+
 ## Model Training
 
 - Before training, please download [train-val-data.tsv](https://drive.google.com/drive/folders/1myoeLdsOYz8mSvYEhSdMfUszUJlaJR3u?usp=sharing) to the data folder.
