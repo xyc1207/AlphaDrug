@@ -51,7 +51,7 @@ def CaculateAffinity(smi, file_protein='./1zys.pdb', file_lig_ref = './1zys_D_19
         
         # file_drug="sdf_ligand_"+str(pdb_id)+str(i)+".sdf"
         smina_cmd_output = os.path.join(out_path, prefix + str(time.time()))
-        launch_args = ["smina", "-r", file_protein, "-l", file_output, "--autobox_ligand", 
+        launch_args = ["/home/yinxia/workdir/smina-code/build/smina", "-r", file_protein, "-l", file_output, "--autobox_ligand", 
                     file_lig_ref, "--autobox_add", "10", "--seed", "1000", "--exhaustiveness", "9",">>", smina_cmd_output]
         # launch_args = ["smina", "-r", file_protein, "-l", file_output, "--autobox_ligand", 
         #             file_lig_ref, "--autobox_add", "10", "--seed", "1000", "--exhaustiveness", "9","-o", prefix+'dockres.pdb']
